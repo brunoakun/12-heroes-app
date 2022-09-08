@@ -12,3 +12,6 @@ ng g module material
 
 ## Crear componentes
 ng g component auth/pages/login
+## Crear rutas
+Crear navegación en src\app\app-routing.module.ts
+Importarlo y exportarlo en app.module.ts
