@@ -4,10 +4,17 @@ import { Error404Component } from './shared/error404/error404.component';
 
 const routes: Routes = [
   {
+    // Lazy load para auth/ -> Cargar AuthModule
     path: 'auth',
     loadChildren: () => import('../app/auth/auth.module').then(m => m.AuthModule)
+  }, 
+  {
+   // Lazy load para heroes/ -> Cargar HeroesModule
+    path: 'heroes',
+    loadChildren: () => import('../app/heroes/heroes.module').then(m => m.HeroesModule)
   },
   {
+    // load para / -> Carga directo los componentes
     path: '404',
     component: Error404Component
   }, {

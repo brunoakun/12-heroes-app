@@ -15,3 +15,12 @@ ng g component auth/pages/login
 ## Crear rutas
 Crear navegación en src\app\app-routing.module.ts
 Importarlo y exportarlo en app.module.ts
+
+## routing con Lazy load
+http://localhost:4200/auth/login
+
+incluir en el app-routing.module el módulo de hijo a cargar, ya que en ese módulo está definido el routing del hijo
+ {
+    path: 'auth',
+    loadChildren: () => import('../app/auth/auth.module').then(m => m.AuthModule)
+ },
