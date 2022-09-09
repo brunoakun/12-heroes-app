@@ -1,1 +1,11 @@
-<p>listado works!</p>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col" *ngFor="let heroe of heroes">
+            <app-heroe-tarjeta [heroe]="heroe"></app-heroe-tarjeta>
+        </div>
+
+    </div>
+
+</div>

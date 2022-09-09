@@ -4,6 +4,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 
@@ -16,7 +18,8 @@ import {MatListModule} from '@angular/material/list';
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ]
 })
 export class MaterialModule { }

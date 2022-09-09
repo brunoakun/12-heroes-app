@@ -31,3 +31,6 @@ incluir en el app-routing.module el módulo de hijo a cargar, ya que en ese mód
    npm i json-server -g json-server 
 3.- desde el teminal, levantar el server con:
    json-server --watch db.json
+
+## Crear el interface desde https://app.quicktype.io/
+## Crear el servicio para getHeroes desde http
