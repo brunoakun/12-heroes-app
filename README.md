@@ -24,3 +24,10 @@ incluir en el app-routing.module el módulo de hijo a cargar, ya que en ese mód
     path: 'auth',
     loadChildren: () => import('../app/auth/auth.module').then(m => m.AuthModule)
  },
+
+## Instalar JSON Server Node.js CI
+1.- crear db.json
+2.- Instalar el server
+   npm i json-server -g json-server 
+3.- desde el teminal, levantar el server con:
+   json-server --watch db.json
