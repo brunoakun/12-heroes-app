@@ -1,18 +1,20 @@
+import { HomeComponent } from './pages/home/home.component';
 import { HeroeComponent } from './pages/heroe/heroe.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { AgregarComponent } from './pages/agregar/agregar.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
   {
     path: '',
+    component: HomeComponent,
     children: [
       {
-        path: 'listado',
+        path: '',
         component: ListadoComponent
       },
       {
@@ -24,7 +26,7 @@ const routes: Routes = [
         component: AgregarComponent
       },
       {
-        path: 'editar/id',
+        path: 'editar/:id',
         component: AgregarComponent
       },
       {
@@ -46,7 +48,10 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(routes)
+  ],
+  exports:[
+    RouterModule
   ]
-  
+
 })
 export class HeroesRoutingModule { }
