@@ -1,1 +1,41 @@
-<p>heroe works!</p>
+<h1 class="mt-1">{{auxId | uppercase}}:</h1>
+
+<div class="container rounded">
+
+    <mat-grid-list cols="1" *ngIf="!heroe;else divHeroe">
+        <mat-grid-tile>
+            <mat-spinner></mat-spinner>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <ng-template #divHeroe>
+
+        <!-- Content section 1-->
+        <section>
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="p-5">
+                            <img class="img-fluid shadow rounded" [src]="heroe | imagen" alt="{{heroe.superhero}}">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="p-5">
+                            <h1 class="display-4">{{heroe.superhero}}</h1>
+                            <mat-list>
+                                <mat-list-item><strong>superhero:</strong> {{heroe.superhero}}</mat-list-item>
+                                <mat-list-item><strong>publisher:</strong> {{heroe.publisher}}</mat-list-item>
+                                <mat-list-item><strong>alter_ego:</strong> {{heroe.alter_ego}}</mat-list-item>
+                                <mat-list-item><strong>first_appearance:</strong> {{heroe.first_appearance}}
+                                </mat-list-item>
+                                <mat-list-item><strong>characters:</strong> {{heroe.characters}}</mat-list-item>
+                            </mat-list>
+                        </div>
+                        <button (click)="volver()" mat-raised-button color="warn">Volver</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </ng-template>
+</div>
