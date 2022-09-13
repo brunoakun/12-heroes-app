@@ -1,1 +1,65 @@
-<p>agregar works!</p>
+<h1> Nuevo <small>xxxx</small></h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form>
+                <div class="row">
+
+                    <!-- superhero -->
+                    <div class="col-md-6 mb-3">
+                        <label for="superhero" class="form-label">Super Heroe</label>
+                        <input type="text" class="form-control" name="superhero" [(ngModel)]="heroe.superhero" required>
+                        <div id="superhero" class="form-text">We'll never share your superhero with anyone else.
+                        </div>
+                    </div>
+
+                    <!-- alter_ego -->
+                    <div class="col-md-6 mb-3">
+                        <label for="alter_ego" class="form-label">alter ego</label>
+                        <input type="text" class="form-control" name="alter_ego" [(ngModel)]="heroe.alter_ego" required>
+                    </div>
+
+                </div>
+
+                <!-- first_appearance -->
+                <div class="col mb-3">
+                    <label for="first_appearance" class="form-label">first appearance</label>
+                    <input type="text" class="form-control" name="first_appearance"
+                        [(ngModel)]="heroe.first_appearance" required>
+                </div>
+
+                <!-- publisher -->
+                <div class="mb-3 ">
+                    <label for="publisher" class="form-label">Publisher</label>
+                    <select class="form-select selectpicker" title="Choose one of the publishers..." name="publisher" [(ngModel)]="heroe.publisher" required>
+                        <option *ngFor="let publisher of publishers; index as i;" value="{{publisher.id}}" > {{publisher.desc}}  
+                        </option>
+                    </select>
+                </div>
+
+                <!-- characters -->
+                <div class="col mb-3">
+                    <label for="characters" class="form-characters">characters</label>
+                    <input type="text" class="form-control" name="characters" [(ngModel)]="heroe.characters" required>
+                </div>
+
+                <!-- alt_img_url -->
+                <div class="col mb-3">
+                    <label for="alt_img_url" class="form-characters">alt_img_url</label>
+                    <input type="text" class="form-control" name="alt_img_url" [(ngModel)]="heroe.alt_img_url" required>
+                </div>
+
+                <div class="col mb-3">
+                    <button mat-raised-button type="button" color="accent" (click)="guardar()">
+                        <mat-icon>save</mat-icon>
+                        Guardar
+                    </button>
+                </div>
+
+            </form>
+        </div>
+        <div class="col">
+            <img [src]="heroe|imagen">
+        </div>
+    </div>
+</div>

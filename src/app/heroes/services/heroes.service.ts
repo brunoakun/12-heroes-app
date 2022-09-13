@@ -26,4 +26,8 @@ export class HeroesService {
     return this.http.get<IHeroe[]>(`${this.apiUrl}/heroes?q=${txtBuscar}&limit=6`);
   }
 
+  addHeroe(heroe: IHeroe): Observable<IHeroe> {
+    return this.http.post<IHeroe>(`${this.apiUrl}/heroes`, heroe);
+  }
+
 }
