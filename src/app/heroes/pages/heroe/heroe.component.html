@@ -28,7 +28,12 @@
                                 <mat-list-item><strong>alter_ego:</strong> {{heroe.alter_ego}}</mat-list-item>
                                 <mat-list-item><strong>first_appearance:</strong> {{heroe.first_appearance}}
                                 </mat-list-item>
-                                <mat-list-item><strong>characters:</strong> {{heroe.characters}}</mat-list-item>
+                                <mat-list-item><strong>first_appearance:</strong>  {{heroe.first_appearance}}</mat-list-item>
+                              
+                                <strong>Personajes:</strong>
+                                <ul>
+                                    <li *ngFor="let person of heroePersonajes">{{person}}</li>
+                                </ul>
                             </mat-list>
                         </div>
                         <button (click)="volver()" mat-raised-button color="warn">Volver</button>

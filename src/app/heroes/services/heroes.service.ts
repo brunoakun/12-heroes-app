@@ -22,4 +22,8 @@ export class HeroesService {
     return (heroe);
   }
 
+  getHeroeSugerencia(txtBuscar: string): Observable<IHeroe[]> {
+    return this.http.get<IHeroe[]>(`${this.apiUrl}/heroes?q=${txtBuscar}&limit=6`);
+  }
+
 }

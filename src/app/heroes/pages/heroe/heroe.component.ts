@@ -11,24 +11,29 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 export class HeroeComponent implements OnInit {
   auxId: string | any = '';
   heroe: IHeroe | any = {};
+  heroePersonajes: string = '';
 
   constructor(
     public rutaActiva: ActivatedRoute,
-    public ruta:Router,
+    public ruta: Router,
     private srvHeroes: HeroesService
   ) { }
 
   ngOnInit(): void {
-    this.auxId = this.rutaActiva.snapshot.paramMap.get('id'); 
+    this.auxId = this.rutaActiva.snapshot.paramMap.get('id');
     this.srvHeroes.getHeroePorId(this.auxId)
       .subscribe(resp => {
         this.heroe = resp;
+        
+        this.heroePersonajes = this.heroe.characters.split(',');
       });
+
   }
 
-  volver(){
+  volver() {
     this.ruta.navigate(['heroes/listado']);
   }
+ 
 
 
 

@@ -1,1 +1,36 @@
-<p>buscar works!</p>
+<div class="row">
+    <div class="col-4">
+        <h1>Buscador</h1>
+        <h2 *ngIf="heroeSeleccionado">{{heroeSeleccionado.superhero}}</h2>
+    </div>
+
+
+        <mat-form-field class="col-8">
+            <input type="text" placeholder="Buscar..." aria-label="Number" matInput [(ngModel)]="txtBuscar"
+                [matAutocomplete]="auto" (input)="buscar()">
+
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"
+                (optionSelected)="opcionSeleccionada($event)">
+
+                <!-- Select -->
+                <mat-option *ngFor="let heroe of heroes" [value]="heroe">
+                    {{ heroe.superhero }}
+                </mat-option>
+
+                <mat-option value='' *ngIf="heroes.length === 0 && txtBuscar.trim().length > 0">
+                    No se encontró nada con el término {{ txtBuscar }}
+                </mat-option>
+
+
+            </mat-autocomplete>
+
+
+        </mat-form-field>
+    </div>
+
+<div col-4>
+    <pre>
+    {{heroeSeleccionado|json}}
+    </pre>
+
+</div>
